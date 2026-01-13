@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    /* Ảnh nền y tế */
+    background-image: url("https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Overlay làm dịu nền */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 32, 39, 0.7);
+    z-index: 0;
+}
+
+/* Card chính */
+.card {
+    width: 100%;
+    max-width: 550px;
+    margin: 50px 0;
+    padding: 32px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+    color: #203a43;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    margin: 10px 0 26px;
+}
+
+.field {
+    margin-bottom: 16px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: border 0.2s, box-shadow 0.2s;
+    background-color: white;
+}
+
+input[type="number"]:focus,
+select:focus {
+    outline: none;
+    border-color: #2c5364;
+    box-shadow: 0 0 0 2px rgba(44, 83, 100, 0.2);
+}
+
+.radio-group {
+    display: flex;
+    gap: 18px;
+}
+
+.radio {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+}
+
+.radio input {
+    accent-color: #2c5364;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #203a43, #2c5364);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(44, 83, 100, 0.45);
+}
+
+.result {
+    margin-top: 24px;
+    padding: 14px;
+    border-radius: 12px;
+    background: #eef6f8;
+    color: #203a43;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Responsive cho mobile */
+@media (max-width: 600px) {
+    .card {
+        width: 100%;
+        max-width: 450px;
+        margin: 20px;
+    }
+}
